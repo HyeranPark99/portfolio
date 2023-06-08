@@ -1,113 +1,259 @@
-import Image from 'next/image'
+// app/page.tsx
+"use client";
+import { useState } from "react"
+import Footer from "./footer";
+import Nav from "./nav"; 
+import Head from 'next/head'
+import Image from 'next/image';
+import {BsFillMoonStarsFill} from 'react-icons/bs';
+import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai'
+import { FaChevronRight } from "react-icons/fa";
+import hyeran from '../public/avatar.jpg'
+import code from '../public/code.png'
+import design from '../public/design.png'
+import aidl from '../public/aidl.png'
+import framework from '../public/framework2.png'
+import collab from '../public/collaborative.png'
+import resume from '../public/resume-image2.png'
+import weather from '../public/weather-ranger.png'
+import regime from '../public/regime-detection.png'
+import Link from 'next/link';
+
+
+
 
 export default function Home() {
+
+  const [darkMode, setDarkMode] = useState(false);
+  
+  const handleMode = () => {
+    setDarkMode(currnetMode => {
+      return !currnetMode
+    })
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <div className={darkMode ? 'dark': ''} >
+      <Head>
+        <title>Hyeran Park Portfolio</title>
+      </Head>
+      <main className=' bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 '>
+        
+          {/* <nav className='py-10 mb-12 flex justify-between'>
+            <h1 className='text-xl font-burtons'>developedbyhr</h1>
+            <ul className='flex items-center'>
+              <li>
+                <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} 
+                className='cursor-pointer text-xl dark:fill-slate-50'/>
+              </li>
+              <li>
+                  <a 
+                    className=' bg-gradient-to-r from-cyan-500 to-teal-500  text-white px-4 py-2 rounded-md ml-8' 
+                    href='#'
+                  >
+                    Resume
+                  </a>
+                </li> 
+            </ul>
+          </nav> */}
+          <Nav />
+
+          <div className='text-center p-10'>
+            <h2 className='text-5xl py-2 text-teal-600 font-medium md:text-6xl'>Hyeran Park</h2>
+            <h3 className='text-2xl py-2 md:text-3xl'>Developer and artist</h3>
+            <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto'>  
+            I identify myself as a curious and self driven developer. 
+            <br />With my differnet career path in the past, I believe I can deliver innovative results and soultions. 
+            </p>
+          </div>
+          <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600'>
+            <Link href='https://www.linkedin.com/in/hyeran-park/' rel='noopener noreferrer'
+              target='_blank' className='cursor-pointer'>
+              <AiFillLinkedin /> 
+            </Link>
+           <Link href='https://github.com/HyeranPark99' rel='noopener noreferrer'
+              target='_blank'className='cursor-pointer'>
+            <AiFillGithub /> 
+           </Link>
+          </div>
+          <div className='mx-auto bg-gradient-to-b from-teal-500 rounded-full w-50 h-50 
+          relative overflow-hidden mt-20 md:h-60 md:w-60 mb-10'>
+            <Image 
+              src={hyeran} 
+              alt='porfile photo'
             />
-          </a>
-        </div>
-      </div>
+          </div>
+        
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section>
+        <div className=' rounded-md shadow-md'> 
+          <div className=' text-center justify-center '>
+            <h3 id='Skills' className='text-2xl font-bold  text-gray-600 py-10'>SKILLS</h3>
+          </div>
+          <div className='flex flex-wrap justify-center py-10 gap-5'>
+              <div className='flex flex-col justify-center items-center rounded-lg 
+              shadow-md w-full m-6 overflow-hidden sm:w-60  bg-slate-100 dark:bg-white'>
+              <Image src={code} alt='string' className='  w-20 m-6 '/>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+              <h2 className='text-center font-bold text-teal-600 px-2'> Web Development</h2>
+              <p className='text-center font-medium  text-gray-600 hover:text-teal-500 px-2 pb-3'> 
+                CSS 
+                <br /> HTML 
+                <br /> JS 
+                <br />Typescript
+                <br /> Java </p>
+              </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+              <div className='flex flex-col justify-center items-center bg-slate-100 rounded-lg 
+              shadow-md w-full m-6 overflow-hidden sm:w-60'>
+              <Image src={design} alt='string' className='  w-20 m-6 '/>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+              <h2 className='text-center font-bold text-teal-600 px-2'> Web Design</h2>
+              <p className='text-center font-medium text-gray-600 hover:text-teal-500 px-2  pb-3'> 
+                Figma 
+                <br /> Tailwind  
+                <br /> Bootstrap </p>
+              </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+              <div className='flex flex-col justify-center items-center bg-slate-100 rounded-lg 
+              shadow-md w-full m-6 overflow-hidden sm:w-60'>
+              <Image src={framework} alt='string' className='  w-20 m-6 '/>
+
+              <h2 className='text-center font-bold text-teal-600 px-2'> Framework/DB</h2>
+              <p className='text-center font-medium text-gray-600 hover:text-teal-500 px-2  pb-3'> 
+                Node.js 
+                <br /> React 
+                <br /> PostgreSQL </p>
+              </div>
+
+              <div className='flex flex-col justify-center items-center bg-slate-100 rounded-lg 
+              shadow-md w-full m-6 overflow-hidden sm:w-60'>
+              <Image src={aidl} alt='string' className='  w-20 m-6 '/>
+
+              <h2 className='text-center font-bold text-teal-600 px-2'> ML</h2>
+              <p className='text-center font-medium text-gray-600 hover:text-teal-500 px-2  pb-3'> 
+               Pyton 
+               <br />Tensorflow 
+              </p>
+              </div>
+            </div>
+        </div>  
+        </section>
+
+        <section id='Projects' className='projects'>
+          <div className=' text-center p-8 justify-center '>
+              <h4 className='text-l font-bold  text-gray-600 pt-20'>PORTFORLIO</h4>
+              <h3 className='text-2xl font-bold text-gray-800 py-30'> My Projects</h3>
+          </div>
+        
+          <div className='flex flex-col lg:flex-row lg:flex-wrap justify-center py-10 gap-8 '>
+
+          <div className=' basis-1/3 flex-1 h-78 w-96  rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 
+            duration-300 hover:-translate-y-2 mx-auto' x-for = '(post, index) in posts'
+            >
+              <figure>
+                <Image src={collab} alt='image' className='rounded-t object-cover'/>
+                <figcaption className='p-4 '>
+                  <p className='text-lg mb-4 font-bold leading-relaxed  text-gray-800 dark:text-gray-300'
+                  x-text= "post.title">
+                    Building a Movie Recommendation System
+                  </p>
+                  <small className='leading-5 text-gray-500 dark:text-gray-400' x-text='post.description'>
+                    Algorithm that predicts ratings of movies matched with various users. Implemented cosign similarity and colloaborative filtering to predict ratings. 
+                  </small>
+                  <Link href='/shop' className='cursor-pointer'>
+                    <div className='flex align-middle py-4'>
+                      <p>
+                        Read More  
+                      </p>  
+                      <FaChevronRight className='pt-2'/>
+                    </div>
+                  </Link>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div className=' basis-1/3 flex-1 h-78 w-96  rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 
+            duration-300 hover:-translate-y-2 mx-auto' x-for = '(post, index) in posts'
+            >
+              <figure>
+                <Image src={resume} alt='image' className='rounded-t object-cover'/>
+                <figcaption className='p-4 '>
+                  <p className='text-lg mb-4 font-bold leading-relaxed  text-gray-800 dark:text-gray-300'
+                  x-text= "post.title">
+                    Building a Movie Recommendation System
+                  </p>
+                  <small className='leading-5 text-gray-500 dark:text-gray-400' x-text='post.description'>
+                    Algorithm that predicts ratings of movies matched with various users. Implemented cosign similarity and colloaborative filtering to predict ratings. 
+                  </small>
+                  <a href='link' className='cursor-pointer'>
+                    <div className='flex align-middle py-4'>
+                      <p>
+                        Read More  
+                      </p>  
+                      <FaChevronRight className='pt-2'/>
+                    </div>
+                  </a>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div className=' basis-1/3 flex-1 h-78 w-96  rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 
+            duration-300 hover:-translate-y-2 mx-auto' x-for = '(post, index) in posts'
+            >
+              <figure>
+                <Image src={regime} alt='image' className='rounded-t object-cover'/>
+                <figcaption className='p-4 '>
+                  <p className='text-lg mb-4 font-bold leading-relaxed  text-gray-800 dark:text-gray-300'
+                  x-text= "post.title">
+                    Building a Movie Recommendation System
+                  </p>
+                  <small className='leading-5 text-gray-500 dark:text-gray-400' x-text='post.description'>
+                    Algorithm that predicts ratings of movies matched with various users. Implemented cosign similarity and colloaborative filtering to predict ratings. 
+                  </small>
+                  <a href='link' className='cursor-pointer'>
+                    <div className='flex align-middle py-4'>
+                      <p>
+                        Read More  
+                      </p>  
+                      <FaChevronRight className='pt-2'/>
+                    </div>
+                  </a>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div className=' basis-1/3 flex-1 h-78 w-96  rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 
+            duration-300 hover:-translate-y-2 mx-auto' x-for = '(post, index) in posts'
+            >
+              <figure>
+                <Image src={weather} alt='image' className='rounded-t object-cover'/>
+                <figcaption className='p-4 '>
+                  <p className='text-lg mb-4 font-bold leading-relaxed  text-gray-800 dark:text-gray-300'
+                  x-text= "post.title">
+                    Building a Movie Recommendation System
+                  </p>
+                  <small className='leading-5 text-gray-500 dark:text-gray-400' x-text='post.description'>
+                    Algorithm that predicts ratings of movies matched with various users. Implemented cosign similarity and colloaborative filtering to predict ratings. 
+                  </small>
+                  <a href='link' className='cursor-pointer'>
+                    <div className='flex align-middle py-4'>
+                      <p>
+                        Read More  
+                      </p>  
+                      <FaChevronRight className='pt-2'/>
+                    </div>
+                  </a>
+                </figcaption>
+              </figure>
+            </div>
+          </div>  
+
+        </section>
+      
+      </main>
+      <Footer />
+
+    </div> 
+  );
 }
