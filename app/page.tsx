@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Footer from "./footer";
 import Nav from "./nav"; 
+import Contact from "./contact";
 import Head from 'next/head'
 import Image from 'next/image';
 import {BsFillMoonStarsFill} from 'react-icons/bs';
@@ -76,7 +77,7 @@ export default function Home() {
             <AiFillGithub /> 
            </Link>
           </div>
-          <div className='mx-auto bg-gradient-to-b from-teal-500 rounded-full w-50 h-50 
+          <div className='mx-auto  rounded-full w-50 h-50 
           relative overflow-hidden mt-20 md:h-60 md:w-60 mb-10'>
             <Image 
               src={hyeran} 
@@ -90,9 +91,9 @@ export default function Home() {
           <div className=' text-center justify-center '>
             <h3 id='Skills' className='text-2xl font-bold  text-gray-600 py-10'>SKILLS</h3>
           </div>
-          <div className='flex flex-wrap justify-center py-10 gap-5'>
-              <div className='flex flex-col justify-center items-center rounded-lg 
-              shadow-md w-full m-6 overflow-hidden sm:w-60  bg-slate-100 dark:bg-white'>
+          <div className='flex flex-wrap justify-center  gap-3 py-10'>
+              <div className=' basis-1/3 flex flex-col justify-center items-center rounded-lg 
+              shadow-md w-full m-3 overflow-hidden sm:w-30  bg-slate-100 dark:bg-white'>
               <Image src={code} alt='string' className='  w-20 m-6 '/>
 
               <h2 className='text-center font-bold text-teal-600 px-2'> Web Development</h2>
@@ -104,8 +105,8 @@ export default function Home() {
                 <br /> Java </p>
               </div>
 
-              <div className='flex flex-col justify-center items-center bg-slate-100 rounded-lg 
-              shadow-md w-full m-6 overflow-hidden sm:w-60'>
+              <div className=' basis-1/3  flex flex-col justify-center items-center bg-slate-100 rounded-lg 
+              shadow-md w-full m-3 overflow-hidden sm:w-60 '>
               <Image src={design} alt='string' className='  w-20 m-6 '/>
 
               <h2 className='text-center font-bold text-teal-600 px-2'> Web Design</h2>
@@ -115,8 +116,8 @@ export default function Home() {
                 <br /> Bootstrap </p>
               </div>
 
-              <div className='flex flex-col justify-center items-center bg-slate-100 rounded-lg 
-              shadow-md w-full m-6 overflow-hidden sm:w-60'>
+              <div className='basis-1/3  flex flex-col justify-center items-center bg-slate-100 rounded-lg 
+              shadow-md w-full m-3 overflow-hidden sm:w-60'>
               <Image src={framework} alt='string' className='  w-20 m-6 '/>
 
               <h2 className='text-center font-bold text-teal-600 px-2'> Framework/DB</h2>
@@ -126,8 +127,8 @@ export default function Home() {
                 <br /> PostgreSQL </p>
               </div>
 
-              <div className='flex flex-col justify-center items-center bg-slate-100 rounded-lg 
-              shadow-md w-full m-6 overflow-hidden sm:w-60'>
+              <div className='basis-1/3 flex flex-col justify-center items-center bg-slate-100 rounded-lg 
+              shadow-md w-full m-3 overflow-hidden sm:w-60'>
               <Image src={aidl} alt='string' className='  w-20 m-6 '/>
 
               <h2 className='text-center font-bold text-teal-600 px-2'> ML</h2>
@@ -161,7 +162,7 @@ export default function Home() {
                   <small className='leading-5 text-gray-500 dark:text-gray-400' x-text='post.description'>
                     Algorithm that predicts ratings of movies matched with various users. Implemented cosign similarity and colloaborative filtering to predict ratings. 
                   </small>
-                  <Link href='/shop' className='cursor-pointer'>
+                  <Link href='/movie' className='cursor-pointer'>
                     <div className='flex align-middle py-4'>
                       <p>
                         Read More  
@@ -250,6 +251,11 @@ export default function Home() {
           </div>  
 
         </section>
+
+        <section id="Contact" className="contact">
+          <Contact  />
+        </section>  
+        
       
       </main>
       <Footer />
